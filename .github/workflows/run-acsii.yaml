@@ -1,7 +1,7 @@
 name: Run ASCII workflow
 on: push
 jobs:
-    first_job:
+    Build_job_1:
         runs-on: ubuntu-latest
         steps: 
             - name: Checkout repo step
@@ -11,8 +11,20 @@ jobs:
               run: |
                 chmod +x run-ascii.sh
                 sh run-ascii.sh
+                sleep 20
             - name: list files
               run: ls -la
+    Deploy_job_2:
+        runs-on: ubuntu-latest
+        steps:  
+            - name: Check dragon availability
+              run : |
+                sleep 10
+                grep -i dragon dragon.txt
+
+            - name: Print dragon
+              run: cat dragon.txt
+    
 
 
            
