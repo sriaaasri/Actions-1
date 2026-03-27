@@ -10,8 +10,8 @@ jobs:
             - name: List files
               run: ls -l
             
-            - name: Read Readme file
-              run: cat README.md
+            - name: Print working-directory
+              run: echo $(pwd)
               
             
         
