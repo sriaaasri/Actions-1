@@ -6,12 +6,18 @@ jobs:
         steps: 
             - name: Welcome message
               run: echo "Welcome to GetHub actions."
-            
+
+            - name: Checkout repo step
+              uses: actions/checkout@v6
+
             - name: List files
               run: ls -l
             
             - name: Print working-directory
               run: echo $(pwd)
+              
+            - name: print README.md file
+              run: cat README.md
     second_job:
         runs-on: ubuntu-latest
         steps: 
