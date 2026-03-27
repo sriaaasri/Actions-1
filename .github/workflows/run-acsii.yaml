@@ -11,15 +11,15 @@ jobs:
               run: |
                 chmod +x run-ascii.sh
                 sh run-ascii.sh
-                sleep 20
+                sleep 5
             - name: list files
               run: ls -la
     Deploy_job_2:
+        needs: [Build_job_1]
         runs-on: ubuntu-latest
         steps:  
             - name: Check dragon availability
               run : |
-                sleep 10
                 grep -i dragon dragon.txt
 
             - name: Print dragon
