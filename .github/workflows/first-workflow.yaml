@@ -1,0 +1,17 @@
+name: First workflow
+on: push
+jobs:
+    first_job:
+        runs-on: ubuntu-latest
+        steps: 
+            - name: Welcome message
+              run: echo "Welcome to GetHub actions."
+            
+            - name: List files
+              run: ls -l
+            
+            - name: Read Readme file
+              run: cat README.md
+              
+            
+        
