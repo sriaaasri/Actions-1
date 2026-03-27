@@ -17,7 +17,10 @@ jobs:
     Deploy_job_2:
         needs: [Build_job_1]
         runs-on: ubuntu-latest
-        steps:  
+        steps: 
+            - name: List files
+              run: ll -a
+               
             - name: Check dragon availability
               run : |
                 grep -i dragon dragon.txt
