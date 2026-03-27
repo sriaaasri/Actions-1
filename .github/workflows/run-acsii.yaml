@@ -17,7 +17,11 @@ jobs:
     Deploy_job_2:
         needs: [Build_job_1]
         runs-on: ubuntu-latest
+        
         steps: 
+            - name: Checkout repo step
+              uses: actions/checkout@v6
+              
             - name: List files
               run: ls -la
 
