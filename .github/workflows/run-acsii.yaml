@@ -29,14 +29,13 @@ jobs:
             - name: Checkout repo step
               uses: actions/checkout@v6
               
-            - name: List files
-              run: ls -la
-            
             - name: Download artiface
               uses: actions/download-artifact@v8
               with:
                 name: dragon-text-file
-                  
+
+            - name: List files
+              run: ls -la
 
             - name: Check dragon availability
               run : |
