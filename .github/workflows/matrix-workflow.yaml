@@ -3,9 +3,15 @@ on: push
 jobs:
     deployment:
         strategy:
+            max-parallel: 2
+            fail-fast: false
             matrix:
                 os: [ubuntu-latest , windows-latest , ubuntu-20.04]
                 image: [hello-world , apline]
+                exclude:
+                    - os: [ubuntu-latest , windows-latest , ubuntu-20.04]
+                      image: [apline]
+               
         runs-on: ${{ matrix.os }}
         steps:
             - name: Run ${{matrix.image}} on ${{ matrix.os }}
