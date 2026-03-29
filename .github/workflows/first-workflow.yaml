@@ -6,7 +6,7 @@ jobs:
         runs-on: ubuntu-latest
         steps: 
             - name: Welcome message
-              run: echo "Welcome to GetHub actions."
+              run: echo "Welcome to GetHub actions on feature branch"
 
             - name: Checkout repo step
               uses: actions/checkout@v6
