@@ -1,15 +1,15 @@
 name: Matrix workflow
 on: push
 jobs:
-    Linux-deployment:
-        runs-on: ubuntu-latest
+    deployment:
+        strategy:
+            matrix:
+                os: [ubuntu-latest , windows-latest]
+        runs-on: ${{ matrix.os }}
         steps:
-            - name: Echo Docker details
-              run: echo docker info
-    Windows-deployment:
-        runs-on: windows-latest
-        steps:
-            - name: Echo Docker details
-              run: docker info
+            - name: Run hello-world on ${{ matrix.os }}
+              run: docker run hello-world
+
+      
 
 
