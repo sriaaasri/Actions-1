@@ -1,0 +1,11 @@
+name: Workflow filters & Activities
+on:
+    push:
+    workflow_dispatch:
+    pull_request:
+jobs:
+    filters_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Running on various activites"
+              run: "echo this workflow is running for the event type - ${{ github.event_name }}"
